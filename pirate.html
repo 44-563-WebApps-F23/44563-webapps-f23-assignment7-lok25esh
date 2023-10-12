@@ -2,73 +2,180 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" 
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" 
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
-    <title>Treasure Hunt</title>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <title>Treasure Hunt</title>
 
 </head>
 
 <body>
-    <h2>Find the treasure by Lokesh Kallepalli</h2>
-    <p style="background-color: lightcoral; color:maroon;">Click on the locations to search
-        for treasure, beware the traps</p>
-    <p id="locations" style="background-color: beige;color: black;">Number of locations checked is zero.</p>
-    <p id="penalty" style="background-color: aqua; color: blue;">Penalty is zero.</p>
-    <p class="btn btn-primary"  style="background-color: aquamarine;color: brown; ">Click for help.</p>
-    <p id="help" style="background-color: lightgreen;color: black;">Help report</p>
+  <h2>Find the treasure by Lokesh Kallepalli</h2>
+  <p style="background-color: lightcoral; color:maroon;">Click on the locations to search
+    for treasure, beware the traps</p>
+  <p id="locations" style="background-color: beige;color: black;">Number of locations checked is zero.</p>
+  <p id="penalty" style="background-color: aqua; color: blue;">Penalty is zero.</p>
+  <p class="btn btn-primary" onclick="help()" id="getHelp()" style="background-color: aquamarine;color: brown; ">Click
+    for help.</p>
+  <p id="help" onclick="help()" style="background-color: lightgreen;color: black;">Help report</p>
 
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-2"><img src="location.jpg" id="img0" alt="image of location" width="150px" height="150px" onclick="check(0)"></div>
+      <div class="col-sm"><img src="location.jpg" id="img1" alt="image of location" width="150px" height="150px"
+          onclick="check(1)"></div>
+      <div class="col-sm"><img src="location.jpg" id="img2" alt="image of location" width="150px" height="150px"
+          onclick="check(2)"></div>
+      <div class="col-sm"><img src="location.jpg" id="img3" alt="image of location" width="150px" height="150px"
+          onclick="check(3)"></div>
+      <div class="col-sm"><img src="location.jpg" id="img4" alt="image of location" width="150px" height="150px"
+          onclick="check(4)"></div>
+    </div>
+    <br>
     <div class="container">
-        <div class="row">
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
+      <div class="row">
+        <div class="col-sm"><img src="location.jpg" id="img5" alt="image of location" width="150px" height="150px"
+            onclick="check(5)"></div>
+        <div class="col-sm"><img src="location.jpg" id="img6" alt="image of location" width="150px" height="150px"
+            onclick="check(6)"></div>
+        <div class="col-sm"><img src="location.jpg" id="img7" alt="image of location" width="150px" height="150px"
+            onclick="check(7)"></div>
+        <div class="col-sm"><img src="location.jpg" id="img8" alt="image of location" width="150px" height="150px"
+            onclick="check(8)"></div>
+        <div class="col-sm"><img src="location.jpg" id="img9" alt="image of location" width="150px" height="150px"
+            onclick="check(9)"></div>
       </div>
       <br>
+      <div class="container">
         <div class="row">
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      </div>
-      <br>
-        <div class="row">
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      </div>
-      <br>
-        <div class="row">
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      </div>
-      <br>
-        <div class="row">
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      <div class="col-sm"><img src="location.jpg" alt="image of location" width="150px" height="150px"></div>
-      </div>
-      </div>
-      
+          <div class="col-sm"><img src="location.jpg" id="img10" alt="image of location" width="150px" height="150px"
+              onclick="check(10)"></div>
+          <div class="col-sm"><img src="location.jpg" id="img11" alt="image of location" width="150px" height="150px"
+              onclick="check(11)"></div>
+          <div class="col-sm"><img src="location.jpg" id="img12" alt="image of location" width="150px" height="150px"
+              onclick="check(12)"></div>
+          <div class="col-sm"><img src="location.jpg" id="img13" alt="image of location" width="150px" height="150px"
+              onclick="check(13)"></div>
+          <div class="col-sm"><img src="location.jpg" id="img14" alt="image of location" width="150px" height="150px"
+              onclick="check(14)"></div>
+        </div>
+        <br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm"><img src="location.jpg" id="img15" alt="image of location" width="150px" height="150px"
+                onclick="check(15)"></div>
+            <div class="col-sm"><img src="location.jpg" id="img16" alt="image of location" width="150px" height="150px"
+                onclick="check(16)"></div>
+            <div class="col-sm"><img src="location.jpg" id="img17" alt="image of location" width="150px" height="150px"
+                onclick="check(17)"></div>
+            <div class="col-sm"><img src="location.jpg" id="img18" alt="image of location" width="150px" height="150px"
+                onclick="check(18)"></div>
+            <div class="col-sm"><img src="location.jpg" id="img19" alt="image of location" width="150px" height="150px"
+                onclick="check(19)"></div>
+          </div>
+          <br>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm"><img src="location.jpg" id="img20" alt="image of location" width="150px"
+                  height="150px" onclick="check(20)"></div>
+              <div class="col-sm"><img src="location.jpg" id="img21" alt="image of location" width="150px"
+                  height="150px" onclick="check(21)"></div>
+              <div class="col-sm"><img src="location.jpg" id="img22" alt="image of location" width="150px"
+                  height="150px" onclick="check(22)"></div>
+              <div class="col-sm"><img src="location.jpg" id="img23" alt="image of location" width="150px"
+                  height="150px" onclick="check(23)"></div>
+              <div class="col-sm"><img src="location.jpg" id="img24" alt="image of location" width="150px"
+                  height="150px" onclick="check(24)"></div>
+            </div>
+            <br>
+
+
+
+
+
+
+
+            <script>
+              let ids = [];
+        let checkCount = 0;
+        let penalty = 0;
+        let lastCheck = 0;
+        let treasureLocation = 5;
+        let trapLocation = 18;
+        let gameOver = false;
     
-   
-   
-   
+        for (let i = 0; i < 25; i++) {
+            ids.push(`img${i}`);
+        }
+    
+        function check(position) {
+            if (gameOver){
+                return;
+            } 
+    
+            let imgid = ids[position];
+            let imgEle = document.getElementById(imgid);
+    
+            if (position === treasureLocation) {
+              imgEle.src = "tresure.jpg";
+                gameOver = true;
+                penalty -= 3;
+            } else if (position === trapLocation) {
+              imgEle.src = "trap.jpg";
+                gameOver = true;
+                penalty += 4;
+            } else {
+              imgEle.src = "pirate.jpg";
+                checkCount++;
+                penalty++;
+            }
+    
+            if(penalty<0)
+                    penalty =0;
+            let locationsEle = document.getElementById("locations");
+            locationsEle.innerHTML="Number of locations checked is "+checkCount;
+                    
+            let penaltyEle = document.getElementById("penalty");
+            penaltyEle.innerHTML= "Penalty is "+penalty;
+                    
+            lastCheck = position;
+        }
+    
+        function help() {
+            let helpText="";
+            let rTreasure = Math.floor(treasureLocation / 5);
+            let cTreasure = treasureLocation % 5;
+            let rLastCheck = Math.floor(lastCheck / 5);
+            let cLastCheck = lastCheck % 5;
+
+            rDiff = Math.abs(rTreasure - rLastCheck);
+            cDiff = Math.abs(cTreasure - cLastCheck);
+
+
+            if ((rDiff ==+1 && cDiff === 0) || (rDiff === 0 && cDifference === 1)) {
+                document.getElementById("help").textContent = "Can smell it";
+            } 
+            else if (rDifference + cDifference === 2) {
+                document.getElementById("help").textContent = "Close Matie";   
+            } 
+            else {
+                document.getElementById("help").textContent = "Step Faster";
+               
+            }
+            penalty += 2;
+            document.getElementById("penalty").textContent = `Penalty is ${penalty}.`;
+           
+        }
+        document.getElementById("help").textContent = helpText;
+
+            </script>
 
 </body>
 

@@ -18,11 +18,7 @@
 
       flex-direction: column;
 
-      align-items: center;
-
-      justify-content: center;
-
-      height: 50vh;
+      
 
       margin: 0;
 
@@ -128,7 +124,7 @@ font-size: 32px;
 
  <div class="flex-container" id="target">
 
-   <!-- 7.6.a -->
+  
 
   <div class="merger">row 1</div>
 
@@ -162,6 +158,8 @@ font-size: 32px;
    
 
    <button onclick="addEnd()">Add end</button>
+
+   <button onclick="swap()">Swap</button>
 
  </div>
 
@@ -237,6 +235,84 @@ font-size: 32px;
     }
 
  };
+ //bonus
+ function swap() {
+
+let mItems = document.getElementsByClassName("merger");
+
+let iLength = mItems.length;
+
+if (iLength < 2) {
+
+ alert("There are not enough elements to swap.");
+
+ return;
+
+}
+
+let rIndex1 = getRandomIndex(iLength);
+
+let rIndex2 = getRandomIndex(iLength, rIndex1);
+
+if (rIndex1 === rIndex2) {
+
+ alert("Selected the same element. Nothing to swap.");
+
+ return;
+
+}
+
+let c = document.getElementById("target");
+
+let item1 = mItems[rIndex1];
+
+let item2 = mItems[rIndex2];
+
+let nItem1 = item1.nextElementSibling;
+
+let nItem2 = item2.nextElementSibling;
+
+if (nItem1 === item2) {
+
+ c.insertBefore(item2, item1);
+
+ c.insertBefore(item1, nextItem2);
+
+}
+
+else if (nItem2 === item1) {
+
+ c.insertBefore(item1, item2);
+
+ c.insertBefore(item2, nItem1);
+
+}
+
+else {
+
+ 
+
+ container.insertBefore(item2, nItem1);
+
+ container.insertBefore(item1, nItem2);
+
+}
+
+}
+
+function getRandomIndex(max, exclIndex) {
+
+let ranIndex;
+
+do {
+
+ ranIndex = Math.floor(Math.random() * max);
+
+} while (ranIndex === exclIndex);
+
+return ranIndex;
+
+}
 
  </script>
 

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+ <head>
+
+  <title>React</title>
+
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link
+
+   rel="stylesheet"
+
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+
+  />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+ </head>
+
+ <body>
+
+  <header>
+
+   <h2> Lokesh Kallepalli Speed check</h2>
+
+  </header>
+
+  <div id="target">Your Time: </div>
+
+  <div id="counter">Count: </div>
+
+  <button id="startTime" class="btn btn-info">Start Timer</button>
+
+  <button id="reactButton" class="btn btn-success" >React</button>
+
+  <script>
+
+   let reactTime = undefined;
+
+   function recordTime() {
+
+    reactTime = Date.now();
+
+    console.log(reactTime);
+
+   }
+
+   const reactButton = document.getElementById("reactButton");
+
+   reactButton.onclick = recordTime;
+
+   function startTime() {
+
+    for (let i = 0; i < 9; i++) {
+
+     setTimeout(function () {
+
+      const count = document.getElementById("counter");
+
+      count.innerHTML = i
+
+     },(8 - i) * 1000);
+
+    }
+
+    setTimeout(function() {
+
+      if (reactTime === undefined) {
+
+       
+
+        const target = document.getElementById("target");
+
+        target.innerHTML = "Too Slow";
+
+      }
+
+      else {
+
+
+        const endTime = Date.now();
+
+        const reactionTime = endTime - reactTime;
+
+        const target = document.getElementById("target");
+
+        target.innerHTML = `The Reaction time is: ${reactionTime} ms`;
+
+      }
+
+    }, 8000);
+
+   }
+
+    const startBtn = document.getElementById("startTime");
+
+    startBtn.onclick = startTime;
+
+  </script>
+
+ </body>
+
+</html>

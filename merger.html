@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Merger</title>
+
+  <style>
+
+    body {
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      height: 50vh;
+
+      margin: 0;
+
+    }
+
+    #inputText {
+
+      padding: 12px;
+
+      font-size: 16px;
+
+      border: 2px solid beige;
+
+      border-radius: 6px;
+
+      width: 100%;
+
+      max-width: 300px;
+
+    }
+
+    .buttons-container {
+
+      display: flex;
+
+      flex-direction: row;
+
+      gap: 13px;
+
+    }
+
+    button {
+
+      padding: 12px 22px;
+
+      font-size: 16px;
+
+      background-color: red;
+
+      color: lightcyan;
+
+      border: none;
+
+      border-radius: 6px;
+
+      cursor: pointer;
+
+    }
+
+    button {
+
+        margin-top: 12px;
+
+      }
+
+   .flex-container {
+
+    display: flex;
+
+    flex-direction: row;
+
+    background-color: blue;
+
+   }
+
+  
+   .flex-container > div {
+
+background-color: #f1f1f1;
+
+margin: 12px;
+
+padding: 22px;
+
+font-size: 32px;
+
+}
+
+   @media (max-width: 500px) {
+
+    .flex-container {
+
+     flex-direction: column;
+
+     background-color: red;
+
+    }
+
+   }
+
+  </style>
+
+</head>
+
+
+
+<header>
+
+  <h2>Lokesh Kallepalli Builds a Merger</h2>
+
+ </header>
+
+
+ <div class="flex-container" id="target">
+
+   <!-- 7.6.a -->
+
+  <div class="merger">row 1</div>
+
+  <div class="merger">row 2</div>
+
+  <div class="merger">row 3</div>
+
+ </div><br>
+
+ <div>
+
+   <input type="text" id="inputText" placeholder="Enter The text" />
+
+ </div>
+
+ <p>
+
+    To add a new div element to your current document, click the button.
+
+ </p>
+
+ <div class="buttons-container">
+
+  
+   <button onclick="addFront()">Add front</button>
+
+  
+
+   <button onclick="remove()">Remove</button>
+
+   
+
+   <button onclick="addEnd()">Add end</button>
+
+ </div>
+
+ <script>
+
+
+
+ function addEnd() {
+
+ 
+
+    let e = document.createElement("div");
+
+    let inputValue = document.getElementById('inputText').value;
+
+ 
+
+    e.innerHTML = inputValue;
+
+ 
+
+    e.className = "merger";
+
+ 
+
+    let container = document.getElementById('target');
+
+    container.appendChild(e);
+
+  };
+
+ 
+
+//  function addFront(){
+
+
+//     let el = document.createElement("div");
+
+//     let inputValue = document.getElementById('inputText').value;
+
+//     el.innerHTML = inputValue;
+
+//     el.className = "merger";
+
+   
+
+//     let c = document.getElementById("target");
+
+    
+
+//     c.insertBefore(el, c.firstChild);
+
+//  };
+
+ 
+
+//  function remove(){
+
+    
+
+//  let mr = document.getElementsByClassName("merger");
+
+   
+
+//  let itemsLength = mr.length;
+
+//     if(itemsLength > 0){
+
+//       let midIndex = Math.floor(itemsLength / 2);
+
+//       mr[midIndex].remove();
+
+//     }
+
+//  };
+
+ </script>
+
+</body>
+
+</html>
